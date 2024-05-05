@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore</title>
+    <link rel="stylesheet" href="explore.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Social Media App</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="#explore" class="active">Explore</a></li>
+                <li><a href="#messages">Messages</a></li>
+                <li><a href="#notifications">Notifications</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main>
+        <!-- Explore Section -->
+        <section id="explore">
+            <h2>Explore</h2>
+            <ul id="trending-topics">
+                <!-- Trending topics will be dynamically added here -->
+                <!-- Trending topics will be dynamically added here -->
+                    <li>#1: Artificial Intelligence</li>
+                    <li>#2: Machine Learning</li>
+                    <li>#3: Cybersecurity</li>
+                    <li>#4: Web Development</li>
+                    <li>#5: Data Science</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Social Media App</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mock data for trending topics
+        const trendingTopics = ["#technology", "#photography", "#travel", "#food", "#music"];
+
+        // Function to display trending topics
+        function displayTrendingTopics() {
+            const topicsList = document.getElementById("trending-topics");
+
+            trendingTopics.forEach(topic => {
+                const listItem = document.createElement("li");
+                listItem.textContent = topic;
+                topicsList.appendChild(listItem);
+            });
+        }
+
+        // Display trending topics when the page loads
+        displayTrendingTopics();
+    </script>
+</body>
+</html>

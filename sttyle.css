@@ -1,0 +1,121 @@
+/* Reset CSS */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #1877f2; /* Facebook blue */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+/* Main Content Area */
+main {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+section#posts {
+    flex: 2;
+}
+
+section#posts h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.post {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.post img {
+    max-width: 80%;
+    border-radius: 8px;
+}
+
+.post p {
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+aside {
+    flex: 1;
+    margin-left: 20px;
+}
+
+aside h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.profile {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.profile img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.profile p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.suggestions p {
+    margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

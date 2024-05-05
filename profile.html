@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Social Media App</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#profile" class="active">Profile</a></li>
+                <li><a href="#explore">Explore</a></li>
+                <li><a href="#messages">Messages</a></li>
+                <li><a href="#notifications">Notifications</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main>
+        <!-- Profile Section -->
+        <section id="profile">
+            <h2>Profile</h2>
+            <div class="profile">
+                <img id="profile-picture" src="images/salomon5.jpg" alt="Profile Picture">
+                <div id="profile-info">
+                    <p id="profile-name">John Doe</p>
+                    <p id="profile-bio">🌟 Dreamer | Explorer | Storyteller 🌟
+
+                        📚 Lifelong learner | 🎨 Creative enthusiast | ✈️ Travel addict
+                        🔍 Seeking beauty in the ordinary and adventure in the unknown
+                        🌍 Wanderlust: Exploring the world one city at a time.
+                        📸 Capturing moments that turn into memories.
+                        🎶 Music lover | 🍵 Chai aficionado | 🍕 Pizza connoisseur.</p>
+                    <button id="edit-profile-btn">Edit Profile</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Social Media App</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Mock data for the profile
+        const profileData = {
+            name: "Salomon Burume",
+            bio: " Dreamer | Explorer | Storytelle"
+        };
+
+        // Function to display profile information
+        function displayProfile() {
+            document.getElementById("profile-name").textContent = profileData.name;
+            document.getElementById("profile-bio").textContent = profileData.bio;
+        }
+
+        // Function to handle editing the profile
+        function editProfile() {
+            const newName = prompt("Enter your new name:");
+            const newBio = prompt("Enter your new bio:");
+
+            if (newName && newBio) {
+                profileData.name = newName;
+                profileData.bio = newBio;
+                displayProfile();
+            }
+        }
+
+        // Display profile information when the page loads
+        displayProfile();
+
+        // Add event listener for the "Edit Profile" button
+        document.getElementById("edit-profile-btn").addEventListener("click", editProfile);
+    </script>
+</body>
+</html>

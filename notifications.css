@@ -1,0 +1,147 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+/* Styles for notifications section */
+#notifications-section {
+    background-color: #f0f2f5;
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+#notifications-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#notifications-list li {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#notifications-list li a {
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+#notifications-list li a:hover {
+    text-decoration: underline;
+}
+
+/* Styles for profile page */
+.profile {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-picture img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.profile-details {
+    flex: 1;
+}
+
+.profile-details h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.profile-details p {
+    margin: 5px 0;
+}
+
+/* Styles for messages page */
+.messages-page {
+    padding: 20px;
+    background-color: #f0f2f5;
+}
+
+.message-thread {
+    margin-bottom: 10px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.message-sender {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.message-content {
+    margin-top: 5px;
+}
+
+/* Styles for explore page */
+.explore-page {
+    padding: 20px;
+    background-color: #f0f2f5;
+}
+
+.trending-topics {
+    margin-bottom: 20px;
+}
+
+.trending-topics h3 {
+    margin-top: 0;
+}
+
+.recommended-pages {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.page {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.page img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.page-details h4 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.page-details p {
+    margin-bottom: 10px;
+}
+
+.page-details button {
+    background-color: #1877f2;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.page-details button:hover {
+    background-color: #166fe5;
+}

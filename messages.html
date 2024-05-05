@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="messages.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Messages</title>
+    <link rel="stylesheet" href="messages.css">
+</head>
+<body>
+    <!-- Messages Model -->
+    <div id="messages-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Messages</h2>
+            <div id="contacts-list">
+                <!-- Contacts will be dynamically added here -->
+                <div class="contact">
+                    <img src="images/dev l.jpg" alt="Profile Picture">
+                    <div class="contact-details">
+                        <h3>John Doe</h3>
+                        <p>burume.kmole@gmail.com</p>
+                    </div>
+                </div>
+                <div class="contact">
+                    <img src="images/salomon5.jpg" alt="Profile Picture">
+                    <div class="contact-details">
+                        <h3>Jane Smith</h3>
+                        <p>salomon.burume@gmail.com</p>
+                    </div>
+                </div>
+                <div class="contact">
+                    <img src="images/salomon1.jpg" alt="Profile Picture">
+                    <div class="contact-details">
+                        <h3>Alice Johnson</h3>
+                        <p>joseph.gilberd@gmail</p>
+                    </div>
+                </div>
+            </div>
+            <div id="conversation">
+                <!-- Conversation messages will be dynamically added here -->
+                <div class="message">
+                    <div class="message-sender">John</div>
+                    <div class="message-content">Hey there!</div>
+                </div>
+                <div class="message">
+                    <div class="message-sender">Alice</div>
+                    <div class="message-content">Hi John! How are you?</div>
+                </div>
+                <div class="message">
+                    <div class="message-sender">John</div>
+                    <div class="message-content">I'm good, thanks! How about you?</div>
+                </div>
+            </div>
+            <div id="message-info">
+                <p id="message-status"></p>
+                <p id="message-count"></p>
+            </div>
+            <div id="message-input">
+                <textarea id="message-text" placeholder="Type your message..."></textarea>
+                <button id="send-message-btn">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Button to open messages model -->
+    <button id="open-messages-btn">Open Messages</button>
+
+    <!-- JavaScript -->
+    <script>
+        // JavaScript code goes here
+        // Mock data for contacts and conversation messages
+        const contacts = [
+            { 
+                name: "John Doe", 
+                profilePic: "john.jpg", // Example profile picture
+                messages: [{ text: "Hello!", sender: "John", seen: true }, { text: "How are you?", sender: "John", seen: false }]
+            },
+            { 
+                name: "Jane Smith", 
+                profilePic: "jane.jpg", // Example profile picture
+                messages: [{ text: "Hi there!", sender: "Jane", seen: true }, { text: "I'm good, thank you!", sender: "Jane", seen: true }]
+            }
+            // Add more contacts as needed
+        ];
+
+        // Current conversation object
+        let currentConversation = null;
+
+        // Function to display contacts in the messages model
+        function displayContacts() {
+            const contactsList = document.getElementById("contacts-list");
+
+            contacts.forEach(contact => {
+                const contactElement = document.createElement("div");
+                contactElement.innerHTML = `
+                    <img src="${contact.profilePic}" alt="${contact.name}">
+                    <div class="contact-info">
+                        <p class="contact-name">${contact.name}</p>
+                        <p class="contact-last-message">${contact.messages[contact.messages.length - 1].text}</p>
+                    </div>`;
+                contactElement.classList.add("contact");
+                contactElement.addEventListener("click", () => displayConversation(contact));
+                contactsList.appendChild(contactElement);
+            });
+        }
+
+        // Function to display conversation messages when a contact is selected
+        function displayConversation(contact) {
+            const conversation = document.getElementById("conversation");
+            conversation.innerHTML = ""; // Clear previous messages
+
+            currentConversation = contact; // Set current conversation
+
+            contact.messages.forEach(message => {
+                const messageElement = document.createElement("div");
+                messageElement.textContent = message.text;
+                messageElement.classList.add("message");
+                if (message.sender === "John") {
+                    messageElement.classList.add("sent");
+                }
+                conversation.appendChild(messageElement);
+            });
+
+            // Update message info
+            const messageStatus = document.getElementById("message-status");
+            const messageCount = document.getElementById("message-count");
+            const totalMessages = contact.messages.length;
+            const seenMessages = contact.messages.filter(msg => msg.seen).length;
+            const unseenMessages = totalMessages - seenMessages;
+
+            messageStatus.textContent = `You have ${unseenMessages} unseen message(s).`;
+            messageCount.textContent = `Total messages: ${totalMessages}`;
+        }
+
+        // Function to send a message
+        function sendMessage() {
+            const messageText = document.getElementById("message-text").value;
+            if (messageText.trim() === "") return; // Do not send empty messages
+
+            // Add the sent message to the conversation
+            const conversation = document.getElementById("conversation");
+            const messageElement = document.createElement("div");
+            messageElement.textContent = messageText;
+            messageElement.classList.add("message", "sent"); // Add 'sent' class to distinguish sent messages
+            conversation.appendChild(messageElement);
+
+            // Update message info
+            const messageCount = document.getElementById("message-count");
+            const totalMessages = currentConversation.messages.length + 1; // +1 for the newly sent message
+            messageCount.textContent = `Total messages: ${totalMessages}`;
+
+            // Clear the message input field
+            document.getElementById("message-text").value = "";
+        }
+
+        // Function to open the messages model when the button is clicked
+        document.getElementById("open-messages-btn").addEventListener("click", () => {
+            const modal = document.getElementById("messages-modal");
+            modal.style.display = "block";
+        });
+
+        // Function to close the messages model when the close button is clicked
+        document.getElementsByClassName("close")[0].addEventListener("click", () => {
+            const modal = document.getElementById("messages-modal");
+            modal.style.display = "none";
+        });
+
+        // Add event listener for sending a message
+        document.getElementById("send-message-btn").addEventListener("click", sendMessage);
+
+        // Display contacts when the page loads
+        displayContacts();
+    </script>
+</body>
+</html>

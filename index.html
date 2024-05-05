@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media App</title>
+    <link rel="stylesheet" href="sttyle.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Social Media App</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#explore">Explore</a></li>
+                <li><a href="#messages">Messages</a></li>
+                <li><a href="#notifications">Notifications</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main>
+        <!-- Posts Section -->
+        <section id="posts">
+            <h2>Recent Posts</h2>
+            <!-- Placeholder for posts -->
+            <div class="post">
+                <img src="images/salomon1.jpg" alt="Placeholder Image">
+                <p>Post content goes here</p>
+            </div>
+            <div class="post">
+                <img src="images/salomon2.jpg" alt="Placeholder Image">
+                <p>Another post content goes here</p>
+            </div>
+            <div class="post">
+                <img src="images/salomon3.jpg" alt="Placeholder Image">
+                <p>Another post content goes here</p>
+            </div>
+            <div class="post">
+                <img src="images/salomon4.jpg" alt="Placeholder Image">
+                <p>Another post content goes here</p>
+            </div>
+            <div class="post">
+                <img src="images/salomon5.jpg" alt="Placeholder Image">
+                <p>Another post content goes here</p>
+            </div>
+            <div class="post">
+                <img src="images/salomon5.jpg" alt="Placeholder Image">
+                <p>Another post content goes here</p>
+            </div>
+            <div class="post">
+                <img src="images/salomon6.jpg" alt="Placeholder Image">
+                <p>Another post content goes here</p>
+            </div>
+            <div class="post">
+                <img src="images/salomon7.jpg" alt="Placeholder Image">
+                <p>Another post content goes here</p>
+            </div>
+            <!-- Add more posts as needed -->
+        </section>
+
+        <!-- Sidebar -->
+        <aside>
+            <h2>Profile</h2>
+            <!-- Placeholder for user profile -->
+            <div class="profile">
+                <img src="images/dev l.jpg" alt="Profile Picture">
+                <p>EDDY Cs-Ai Master</p>
+                <p>👨‍💻 Computer Science Engineer | 💻 Professional Developer | 🚀 Tech Enthusiast
+                    🔧 Crafting code and solving puzzles since [Year of starting in CS].
+                    💡 Passionate about building innovative software solutions that make a difference.
+                    🌐 Full-stack developer with expertise in [Programming languages/technologies you specialize in]
+                    📊 Data-driven problem solver | 🛠️ Continuous learner | 📈 Growth mindset advocate
+                    🚀 Turning ideas into reality, one line of code at a time.
+                    🌱 Exploring the latest tech trends and always eager to learn something new
+                    Let's connect and code together! 💻✨</p>
+                <!-- Add more profile information -->
+            </div>
+
+            <h2>Suggestions</h2>
+            <!-- Placeholder for friend suggestions -->
+            <div class="suggestions">
+                <p>Salomon Burume</p>
+                <p>joseph Burume</p>
+                <p>Cubaka Musafiri/p>
+                <p>Felly Ushindi</p>
+                <p>Ansima Dorcas/p>
+                <p>Seven Bin</p>
+                <!-- Add more friend suggestions -->
+            </div>
+
+            <!-- Add more sidebar sections as needed -->
+
+        </aside>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Social Media App</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href').substring(1);
+                const target = document.getElementById(targetId);
+                
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

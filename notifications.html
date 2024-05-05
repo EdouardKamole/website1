@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifications</title>
+    <link rel="stylesheet" href="notifications.css">
+</head>
+<body>
+    <!-- Notifications Section -->
+    <div id="notifications-section">
+        <h2>Notifications</h2>
+        <ul id="notifications-list">
+            <!-- Notifications will be dynamically added here -->
+            <li><a href="#" onclick="navigateTo('profile')">John Doe liked your post</a></li>
+            <li><a href="#" onclick="navigateTo('messages')">Jane Smith sent you a message</a></li>
+            <li><a href="#" onclick="navigateTo('explore')">Alice Johnson mentioned you in a comment</a></li>
+        </ul>
+    </div>
+
+    <!-- Other page contents -->
+    <!-- Profile Page -->
+    <div id="profile-page" style="display: none;">
+        <h2>Profile Page</h2>
+        <!-- Profile page content goes here -->
+        <div class="profile">
+            <div class="profile-picture">
+                <img src="images/salomon6.jpg" alt="Profile Picture">
+            </div>
+            <div class="profile-details">
+                <h2>John Doe</h2>
+                <p>Email: john@example.com</p>
+                <p>Location: New York City, USA</p>
+                <p>Interests: Web Development, Data Science, AI</p>
+                <p>About Me: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed et suscipit libero.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Messages Page -->
+    <div id="messages-page" style="display: none;">
+        <h2>Messages Page</h2>
+        <!-- Messages page content goes here -->
+        <div class="messages-page">
+            <h2>Messages</h2>
+            <div class="message-thread">
+                <div class="message-sender">John</div>
+                <div class="message-content">Hey there!</div>
+            </div>
+            <div class="message-thread">
+                <div class="message-sender">Alice</div>
+                <div class="message-content">Hi John! How are you?</div>
+            </div>
+            <div class="message-thread">
+                <div class="message-sender">John</div>
+                <div class="message-content">I'm good, thanks! How about you?</div>
+            </div>
+    </div>
+
+    <!-- Explore Page -->
+    <div id="explore-page" style="display: none;">
+        <h2>Explore Page</h2>
+        <!-- Explore page content goes here -->
+        <div class="explore-page">
+            <h2>Explore</h2>
+            <div class="trending-topics">
+                <h3>Trending Topics</h3>
+                <ul>
+                    <li>#1: Artificial Intelligence</li>
+                    <li>#2: Machine Learning</li>
+                    <li>#3: Cybersecurity</li>
+                    <li>#4: Web Development</li>
+                    <li>#5: Data Science</li>
+                </ul>
+            </div>
+            <div class="recommended-pages">
+                <h3>Recommended Pages</h3>
+                <div class="page">
+                    <img src="images/salomon3.jpg" alt="Page Picture">
+                    <div class="page-details">
+                        <h4>Web Development Hub</h4>
+                        <p>Explore the latest in web development trends and technologies.</p>
+                        <button>Like</button>
+                    </div>
+                </div>
+                <div class="page">
+                    <img src="page2.jpg" alt="Page Picture">
+                    <div class="page-details">
+                        <h4>Data Science World</h4>
+                        <p>Dive deep into the world of data science with expert insights and tutorials.</p>
+                        <button>Like</button>
+                    </div>
+                </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Function to navigate to different pages
+        function navigateTo(page) {
+            // Hide all pages
+            const pages = document.querySelectorAll('[id$="-page"]');
+            pages.forEach(page => {
+                page.style.display = "none";
+            });
+
+            // Show the selected page
+            const selectedPage = document.getElementById(page + "-page");
+            if (selectedPage) {
+                selectedPage.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
